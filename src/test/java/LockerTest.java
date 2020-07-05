@@ -1,4 +1,5 @@
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class LockerTest {
 
@@ -7,7 +8,10 @@ public class LockerTest {
     //**Then** 包成功存入S号Locker中，返回票
     @Test
     public void should_store_bag_to_s_locker_when_save_s_bag_given_s_locker_has_place() {
-        //TODO
+        Locker locker = new Locker("S",5);
+        Bag bag = new Bag("S",1);
+        Ticket ticket = locker.save(bag);
+        assertNotNull(ticket);
     }
 
     //**Given**  一个S号Locker，无剩余空间
